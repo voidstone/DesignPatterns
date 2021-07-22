@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Http\Controllers\Delegation\AppMessenger;
 use App\Models\BlogPost;
 
 class FundamentalPatternsController extends Controller
@@ -27,6 +28,32 @@ class FundamentalPatternsController extends Controller
         $item->deleteProperty('read_only');
 
         dd($item);
+    }
+
+    public function delegation()
+    {
+
+        $name = 'Делегирование (Delegation';
+
+        $item = new AppMessenger();
+
+        $item->setSender('sender@imail.net')
+            ->setRecipient('recipient@imail.net')
+            ->setMessage('Hello email messenger')
+            ->send();
+
+        $item->toSms()
+            ->setSender('89614324342')
+            ->setRecipient('89174324344')
+            ->setMessage('Hello SMS messenger')
+            ->send();
+
+
+//        dd($item);
+
+        \Debugbar::info($item);
+
+        return view('welcome');
     }
 
 }
