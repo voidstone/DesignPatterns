@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Controllers\Delegation\AppMessenger;
+use App\Http\Controllers\EventChannel\EventChannel;
+use App\Http\Controllers\EventChannel\EventChannelJob;
 use App\Models\BlogPost;
 
 class FundamentalPatternsController extends Controller
@@ -54,6 +56,18 @@ class FundamentalPatternsController extends Controller
         \Debugbar::info($item);
 
         return view('welcome');
+    }
+
+    public function EventChannel()
+    {
+
+        $item = new EventChannelJob();
+        $item->run();
+
+        \Debugbar::info($item);
+
+        return view('welcome');
+
     }
 
 }

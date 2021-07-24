@@ -23,6 +23,7 @@ Auth::routes();
 
 Route::get('/property-container', [App\Http\Controllers\FundamentalPatternsController::class, 'PropertyContainer'])->name('property-container');
 Route::get('/delegation', [App\Http\Controllers\FundamentalPatternsController::class, 'delegation'])->name('delegation');
+Route::get('/eventChannel', [App\Http\Controllers\FundamentalPatternsController::class, 'eventChannel'])->name('eventChannel');
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
