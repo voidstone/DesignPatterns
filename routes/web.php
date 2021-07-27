@@ -27,4 +27,7 @@ Route::get('/eventChannel', [App\Http\Controllers\FundamentalPatternsController:
 Route::get('/interface', [App\Http\Controllers\FundamentalPatternsController::class, 'interface'])->name('interface');
 
 
+Route::get('/abstract-factory', [App\Http\Controllers\CreationalPatternsController::class, 'abstractFactory'])->name('abstract-factory');
+
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
