@@ -15,7 +15,7 @@ class CreationalPatternsController extends Controller
      */
     public function __construct()
     {
-        $this->guiKit = (new GuiKitFactory())->getFactory('bootstrap');
+        $this->guiKit = (new GuiKitFactory())->getFactory('semanticui');
     }
 
     public function abstractFactory()
@@ -23,9 +23,9 @@ class CreationalPatternsController extends Controller
         $result[] = $this->guiKit->buildButton()->draw();
         $result[] = $this->guiKit->buildCheckbox()->draw();
 
-        \DebugBar::info($result);
+        \Debugbar::info($result);
 
-
+        return view('welcome');
     }
 
 }

@@ -8,7 +8,6 @@ use App\DesignPatterns\Creational\AbstractFactory\interfaces\ButtonInterface;
 
 class ButtonBootstrap implements ButtonInterface
 {
-
     /**
      * @return string
      */
