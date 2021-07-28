@@ -9,3 +9,4 @@
 Порождающие шаблоны
 
 1. Abstract factory
+2. Factory Method
