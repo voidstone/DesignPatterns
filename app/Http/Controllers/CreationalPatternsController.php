@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 
 
 use App\DesignPatterns\Creational\AbstractFactory\GuiKitFactory;
+use App\DesignPatterns\Creational\FactoryMethod\classes\BootstrapDialogForm;
+use App\DesignPatterns\Creational\FactoryMethod\classes\SemanticUiDialogForm;
 
 class CreationalPatternsController extends Controller
 {
@@ -28,4 +30,16 @@ class CreationalPatternsController extends Controller
         return view('welcome');
     }
 
+
+    public function factoryMethod()
+    {
+        $dialogForm = new SemanticUiDialogForm();
+        $result = $dialogForm->render();
+
+        \Debugbar::info($result);
+
+        return view('welcome');
+
+
+    }
 }
