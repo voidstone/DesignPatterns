@@ -11,3 +11,4 @@
 
 1. Abstract factory
 2. Factory Method
+3. Static Factory

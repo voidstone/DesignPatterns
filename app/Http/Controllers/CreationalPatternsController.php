@@ -7,6 +7,8 @@ namespace App\Http\Controllers;
 use App\DesignPatterns\Creational\AbstractFactory\GuiKitFactory;
 use App\DesignPatterns\Creational\FactoryMethod\classes\BootstrapDialogForm;
 use App\DesignPatterns\Creational\FactoryMethod\classes\SemanticUiDialogForm;
+use App\DesignPatterns\Creational\StaticFactory\StaticFactory;
+use DebugBar\DebugBar;
 
 class CreationalPatternsController extends Controller
 {
@@ -41,5 +43,16 @@ class CreationalPatternsController extends Controller
         return view('welcome');
 
 
+    }
+
+    public function staticFactory()
+    {
+
+        $appMailMessenger = StaticFactory::build('email');
+        $appPhoneMessenger = StaticFactory::build('sms');
+
+        \Debugbar::info($appMailMessenger,$appPhoneMessenger);
+
+        return view('welcome');
     }
 }
