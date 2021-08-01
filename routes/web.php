@@ -31,6 +31,7 @@ Route::get('/interface', [App\Http\Controllers\FundamentalPatternsController::cl
 Route::get('/abstract-factory', [App\Http\Controllers\CreationalPatternsController::class, 'abstractFactory'])->name('abstract-factory');
 Route::get('/factory-method', [App\Http\Controllers\CreationalPatternsController::class, 'factoryMethod'])->name('factory-method');
 Route::get('/static-factory', [App\Http\Controllers\CreationalPatternsController::class, 'staticFactory'])->name('static-factory');
+Route::get('/simply-factory', [App\Http\Controllers\CreationalPatternsController::class, 'simpleFactory'])->name('simply-factory');
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
