@@ -12,3 +12,5 @@
 1. Abstract factory
 2. Factory Method
 3. Static Factory
+4. Simple Factory
+5. Singleton
