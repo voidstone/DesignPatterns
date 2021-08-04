@@ -35,4 +35,8 @@ Route::get('/simply-factory', [App\Http\Controllers\CreationalPatternsController
 Route::get('/singleton', [App\Http\Controllers\CreationalPatternsController::class, 'singleton'])->name('singleton');
 
 
+
+Route::get('/strategy', [App\Http\Controllers\BehavioralPatternsController::class, 'strategy'])->name('strategy');
+
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
