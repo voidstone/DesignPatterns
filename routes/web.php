@@ -33,6 +33,7 @@ Route::get('/factory-method', [App\Http\Controllers\CreationalPatternsController
 Route::get('/static-factory', [App\Http\Controllers\CreationalPatternsController::class, 'staticFactory'])->name('static-factory');
 Route::get('/simply-factory', [App\Http\Controllers\CreationalPatternsController::class, 'simpleFactory'])->name('simply-factory');
 Route::get('/singleton', [App\Http\Controllers\CreationalPatternsController::class, 'singleton'])->name('singleton');
+Route::get('/multiton', [App\Http\Controllers\CreationalPatternsController::class, 'multiton'])->name('multiton');
 
 
 

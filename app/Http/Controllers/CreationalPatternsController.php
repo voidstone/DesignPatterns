@@ -7,6 +7,8 @@ namespace App\Http\Controllers;
 use App\DesignPatterns\Creational\AbstractFactory\GuiKitFactory;
 use App\DesignPatterns\Creational\FactoryMethod\classes\BootstrapDialogForm;
 use App\DesignPatterns\Creational\FactoryMethod\classes\SemanticUiDialogForm;
+use App\DesignPatterns\Creational\Multiton\SimpleMultiton;
+use App\DesignPatterns\Creational\Multiton\SimpleMultitonNext;
 use App\DesignPatterns\Creational\SimpleFactory\MessengerSimpleFactory;
 use App\DesignPatterns\Creational\Singleton\AdvancedSingleton;
 use App\DesignPatterns\Creational\Singleton\AnotherConnection;
@@ -102,5 +104,30 @@ class CreationalPatternsController extends Controller
 
         \Debugbar::info($result);
         return view('welcome');
+    }
+
+
+    public function multiton()
+    {
+
+        $multiton[] = SimpleMultiton::getInstance('mysql')->setTest('mysql-test');
+        $multiton[] = SimpleMultiton::getInstance('mongo');
+
+        $multiton[] = SimpleMultiton::getInstance('mysql');
+        $multiton[] = SimpleMultiton::getInstance('mongo')->setTest('mongo-test');
+
+        $simpleMultitonNext = SimpleMultitonNext::getInstance('mysql');
+        $simpleMultitonNext->test2 = 'init';
+        $multiton[] = $simpleMultitonNext;
+
+        $simpleMultitonNext = SimpleMultitonNext::getInstance('mysql');
+        $simpleMultitonNext->test2 = 'init2';
+        $multiton[] = $simpleMultitonNext;
+
+
+
+        \Debugbar::info($multiton);
+        return view('welcome');
+
     }
 }
