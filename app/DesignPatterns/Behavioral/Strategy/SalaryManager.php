@@ -59,6 +59,7 @@ class SalaryManager
 
     private function saveSalary($usersSalary)
     {
+        return true;
     }
 
     private function getStrategyByUser(User $user) : SalaryStrategyInterface

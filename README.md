@@ -14,6 +14,7 @@
 3. Static Factory
 4. Simple Factory
 5. Singleton
+6. Multiton
 
 Поведенческие шаблоны
 
