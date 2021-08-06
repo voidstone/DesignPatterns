@@ -15,6 +15,7 @@
 4. Simple Factory
 5. Singleton
 6. Multiton
+7. Builder
 
 Поведенческие шаблоны
 
