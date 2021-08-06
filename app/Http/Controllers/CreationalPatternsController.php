@@ -130,4 +130,12 @@ class CreationalPatternsController extends Controller
         return view('welcome');
 
     }
+
+    public function builder()
+    {
+
+
+        return view('welcome');
+
+    }
 }
