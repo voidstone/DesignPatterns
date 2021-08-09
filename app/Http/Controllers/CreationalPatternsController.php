@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 
 
 use App\DesignPatterns\Creational\AbstractFactory\GuiKitFactory;
+use App\DesignPatterns\Creational\Builder\BlogPostBuilder;
+use App\DesignPatterns\Creational\Builder\BlogPostManager;
 use App\DesignPatterns\Creational\FactoryMethod\classes\BootstrapDialogForm;
 use App\DesignPatterns\Creational\FactoryMethod\classes\SemanticUiDialogForm;
 use App\DesignPatterns\Creational\Multiton\SimpleMultiton;
@@ -134,6 +136,20 @@ class CreationalPatternsController extends Controller
     public function builder()
     {
 
+
+        $builder = new BlogPostBuilder();
+
+        $posts[] = $builder->setTitle("from BUilder")->getBlogPost();
+
+        $manager = new BlogPostManager();
+        $manager->setBuilder($builder);
+
+        $posts[] = $manager->createCleanPost();
+        $posts[] = $manager->createNewPostIt();
+        $posts[] = $manager->createNewPostCats();
+
+
+        \Debugbar::info($posts);
 
         return view('welcome');
 
