@@ -7,9 +7,16 @@ use App\DesignPatterns\Creational\Builder\Interfaces\BlogPostBuilderInterface;
 class BlogPostManager
 {
 
+    /**
+     * @var
+     */
     private $builder;
 
 
+    /**
+     * @param BlogPostBuilderInterface $builder
+     * @return $this
+     */
     public function setBuilder(BlogPostBuilderInterface $builder)
     {
         $this->builder = $builder;
@@ -18,6 +25,9 @@ class BlogPostManager
 
     }
 
+    /**
+     * @return mixed
+     */
     public function createCleanPost()
     {
         $blogPost = $this->builder->getBlogPost();
@@ -26,6 +36,9 @@ class BlogPostManager
 
     }
 
+    /**
+     * @return mixed
+     */
     public function createNewPostIt()
     {
 
@@ -42,6 +55,9 @@ class BlogPostManager
 
     }
 
+    /**
+     * @return mixed
+     */
     public function createNewPostCats()
     {
         $blogPost = $this->builder->setTitle("Новыйц пост про котов")

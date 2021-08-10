@@ -16,6 +16,7 @@
 5. Singleton
 6. Multiton
 7. Builder
+8. Lazy initialization
 
 Поведенческие шаблоны
 
