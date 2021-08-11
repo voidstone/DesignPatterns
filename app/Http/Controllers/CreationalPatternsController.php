@@ -9,6 +9,7 @@ use App\DesignPatterns\Creational\Builder\BlogPostBuilder;
 use App\DesignPatterns\Creational\Builder\BlogPostManager;
 use App\DesignPatterns\Creational\FactoryMethod\classes\BootstrapDialogForm;
 use App\DesignPatterns\Creational\FactoryMethod\classes\SemanticUiDialogForm;
+use App\DesignPatterns\Creational\LazyInintailization\lazyInitialization;
 use App\DesignPatterns\Creational\Multiton\SimpleMultiton;
 use App\DesignPatterns\Creational\Multiton\SimpleMultitonNext;
 use App\DesignPatterns\Creational\SimpleFactory\MessengerSimpleFactory;
@@ -23,6 +24,7 @@ class CreationalPatternsController extends Controller
 {
 
     private $guiKit;
+
     /**
      * CreationalPatternsController constructor.
      */
@@ -60,7 +62,7 @@ class CreationalPatternsController extends Controller
         $appMailMessenger = StaticFactory::build('email');
         $appPhoneMessenger = StaticFactory::build('sms');
 
-        \Debugbar::info($appMailMessenger,$appPhoneMessenger);
+        \Debugbar::info($appMailMessenger, $appPhoneMessenger);
 
         return view('welcome');
     }
@@ -73,7 +75,7 @@ class CreationalPatternsController extends Controller
         $appMailMessenger = $factory->build('email');
         $appPhoneMessenger = $factory->build('sms');
 
-        \Debugbar::info($appMailMessenger,$appPhoneMessenger);
+        \Debugbar::info($appMailMessenger, $appPhoneMessenger);
 
         return view('welcome');
     }
@@ -85,7 +87,6 @@ class CreationalPatternsController extends Controller
         $result['simpleSingleton2'] = SimpleSingleton::getInstance();
 
         $result[] = $result['simpleSingleton1'] === $result['simpleSingleton2'];
-
 
 
         $result['AdvancedSingleton1'] = AdvancedSingleton::getInstance();
@@ -127,7 +128,6 @@ class CreationalPatternsController extends Controller
         $multiton[] = $simpleMultitonNext;
 
 
-
         \Debugbar::info($multiton);
         return view('welcome');
 
@@ -153,5 +153,18 @@ class CreationalPatternsController extends Controller
 
         return view('welcome');
 
+    }
+
+    public function lazyInitialization()
+    {
+        $lazyLoad = new lazyInitialization();
+
+        $user[] = $lazyLoad->getUser()->name;
+        $user[] = $lazyLoad->getUser()->email;
+        $user[] = $lazyLoad->getUser()->created_at;
+
+        \Debugbar::info($user);
+
+        return view('welcome');
     }
 }
