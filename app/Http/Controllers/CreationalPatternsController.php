@@ -12,6 +12,7 @@ use App\DesignPatterns\Creational\FactoryMethod\classes\SemanticUiDialogForm;
 use App\DesignPatterns\Creational\LazyInintailization\lazyInitialization;
 use App\DesignPatterns\Creational\Multiton\SimpleMultiton;
 use App\DesignPatterns\Creational\Multiton\SimpleMultitonNext;
+use App\DesignPatterns\Creational\prototype\PrototypeDemo;
 use App\DesignPatterns\Creational\SimpleFactory\MessengerSimpleFactory;
 use App\DesignPatterns\Creational\Singleton\AdvancedSingleton;
 use App\DesignPatterns\Creational\Singleton\AnotherConnection;
@@ -166,5 +167,17 @@ class CreationalPatternsController extends Controller
         \Debugbar::info($user);
 
         return view('welcome');
+    }
+
+    public function prototype()
+    {
+
+        $prototypeDemo = new PrototypeDemo();
+        $result = $prototypeDemo->run();
+
+
+        \Debugbar::info($result);
+        return view('welcome');
+
     }
 }

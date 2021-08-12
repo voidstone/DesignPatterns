@@ -17,6 +17,7 @@
 6. Multiton
 7. Builder
 8. Lazy initialization
+9. prototype, clone
 
 Поведенческие шаблоны
 
