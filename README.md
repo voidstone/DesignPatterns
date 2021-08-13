@@ -18,6 +18,7 @@
 7. Builder
 8. Lazy initialization
 9. prototype, clone
+10. Object pool
 
 Поведенческие шаблоны
 
