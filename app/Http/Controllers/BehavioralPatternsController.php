@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\DesignPatterns\Behavioral\adapter\classes\MediaLibraryAdapter;
+use App\DesignPatterns\Behavioral\adapter\interfaces\MediaLibraryInterface;
+use App\DesignPatterns\Behavioral\adapter\MediaLibrarySelfWritten;
 use App\DesignPatterns\Behavioral\Strategy\SalaryManager;
 use App\Models\User;
 use Carbon\Carbon;
@@ -24,6 +27,26 @@ class BehavioralPatternsController extends Controller
 
 
         return view('welcome');
+
+    }
+
+    public function adapter()
+    {
+
+//        $mediaLibrary = app( MediaLibrarySelfWritten::class);
+
+//        $mediaLibrary = app(MediaLibraryAdapter::class);
+
+
+        $mediaLibrary = app(MediaLibraryInterface::class);
+
+        $result[] = $mediaLibrary->upload('ImageFile');
+
+        $result[] = $mediaLibrary->get('ImageFile');
+
+
+        return view('welcome');
+
 
     }
 
