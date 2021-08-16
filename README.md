@@ -24,3 +24,4 @@
 
 1. Strategy
 2. Adapter
+3. Facade

@@ -43,6 +43,7 @@ Route::get('/objectPool', [App\Http\Controllers\CreationalPatternsController::cl
 
 Route::get('/strategy', [App\Http\Controllers\BehavioralPatternsController::class, 'strategy'])->name('strategy');
 Route::get('/adapter', [App\Http\Controllers\BehavioralPatternsController::class, 'adapter'])->name('adapter');
+Route::get('/facade', [App\Http\Controllers\BehavioralPatternsController::class, 'facade'])->name('facade');
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
