@@ -26,3 +26,4 @@
 2. Adapter
 3. Facade
 4. Bridge
+5. Composite
