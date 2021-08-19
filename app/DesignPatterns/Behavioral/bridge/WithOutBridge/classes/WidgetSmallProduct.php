@@ -3,6 +3,7 @@
 namespace App\DesignPatterns\Behavioral\bridge\WithOutBridge\classes;
 
 use App\DesignPatterns\Behavioral\bridge\Entities\Product;
+use Illuminate\Support\Str;
 
 class WidgetSmallProduct extends WidgetAbstact
 {

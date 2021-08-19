@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\DesignPatterns\Behavioral\adapter\classes\MediaLibraryAdapter;
 use App\DesignPatterns\Behavioral\adapter\interfaces\MediaLibraryInterface;
 use App\DesignPatterns\Behavioral\adapter\MediaLibrarySelfWritten;
-use App\DesignPatterns\Behavioral\bridge\WithOutBridge\classes\WithOutBridgeDemo;
+use App\DesignPatterns\Behavioral\bridge\WithBridge\BridgeDemo;
+use App\DesignPatterns\Behavioral\bridge\WithOutBridge\WithOutBridgeDemo;
 use App\DesignPatterns\Behavioral\facade\classes\Order;
 use App\DesignPatterns\Behavioral\facade\OrderSaveFacade;
 use App\DesignPatterns\Behavioral\Strategy\SalaryManager;
@@ -68,8 +69,8 @@ class BehavioralPatternsController extends Controller
     public function bridge()
     {
 
-        (new WithOutBridgeDemo())->run();
-//        (new BridgeDemo())->run();
+//        (new WithOutBridgeDemo())->run();
+        (new BridgeDemo())->run();
 
         return view('welcome');
     }

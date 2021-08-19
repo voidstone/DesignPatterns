@@ -17,7 +17,7 @@ class WidgetMiddleProduct extends WidgetAbstact
     private function getRealizationLogic(Product $product)
     {
         $id = $product->id;
-        $middleTitle = $product->id . '::::' . $product->name;
+        $middleTitle = $product->id . '->' . $product->name;
         $description = $product->description;
 
         return compact('id', 'middleTitle', 'description');
