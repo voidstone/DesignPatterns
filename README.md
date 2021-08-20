@@ -27,3 +27,4 @@
 3. Facade
 4. Bridge
 5. Composite
+6. Decorator
