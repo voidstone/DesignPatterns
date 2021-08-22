@@ -45,6 +45,7 @@ Route::get('/strategy', [App\Http\Controllers\BehavioralPatternsController::clas
 Route::get('/adapter', [App\Http\Controllers\BehavioralPatternsController::class, 'adapter'])->name('adapter');
 Route::get('/facade', [App\Http\Controllers\BehavioralPatternsController::class, 'facade'])->name('facade');
 Route::get('/bridge', [App\Http\Controllers\BehavioralPatternsController::class, 'bridge'])->name('bridge');
+Route::get('/composite', [App\Http\Controllers\BehavioralPatternsController::class, 'composite'])->name('composite');
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

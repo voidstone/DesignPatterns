@@ -10,6 +10,7 @@ use App\DesignPatterns\Behavioral\bridge\WithOutBridge\WithOutBridgeDemo;
 use App\DesignPatterns\Behavioral\facade\classes\Order;
 use App\DesignPatterns\Behavioral\facade\OrderSaveFacade;
 use App\DesignPatterns\Behavioral\Strategy\SalaryManager;
+use App\DesignPatterns\composite\Orders\OrderPriceComposite;
 use App\Models\User;
 use Carbon\Carbon;
 
@@ -73,6 +74,14 @@ class BehavioralPatternsController extends Controller
         (new BridgeDemo())->run();
 
         return view('welcome');
+    }
+
+    public function composite()
+    {
+        (new OrderPriceComposite())->run();
+
+        return view('welcome');
+
     }
 
 }

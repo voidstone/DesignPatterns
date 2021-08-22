@@ -34,6 +34,3 @@ class WidgetSmallAbstraction extends WidgetAbstact
     }
 }
 
-{
-
-}
