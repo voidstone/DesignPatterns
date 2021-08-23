@@ -27,4 +27,4 @@
 3. Facade
 4. Bridge
 5. Composite =>  https://bit.ly/3mj3pMc
-6. Decorator
+6. Decorator =>  https://bit.ly/2XPZdtb
